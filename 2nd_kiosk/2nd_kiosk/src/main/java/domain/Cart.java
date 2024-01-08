@@ -1,5 +1,6 @@
 package domain;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class Cart {
@@ -38,12 +39,15 @@ public class Cart {
         orderList.clear();
     }
 
-    public double calculateTotalprice() {
-        double totalPrice = 0;
+
+    // 정확한 계산을 위해서 BigDecimal class 사용!
+    public BigDecimal calculateTotalprice() {
+        BigDecimal totalPrice = BigDecimal.ZERO;  // 변수 생성,초기값 0을 가진 객체 할당
         for (Order order : orderList) {
-            totalPrice += order.getPrice();
+            BigDecimal orderPrice = BigDecimal.valueOf(order.getPrice());  // BigDecimal 형태로 변환
+            totalPrice = totalPrice.add(orderPrice);
         }
-        return Double.parseDouble(String.format("%.1f", totalPrice));
+        return totalPrice.setScale(1, BigDecimal.ROUND_HALF_UP);
     }
 
 

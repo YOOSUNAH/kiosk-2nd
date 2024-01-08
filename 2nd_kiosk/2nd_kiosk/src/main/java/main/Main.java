@@ -7,6 +7,7 @@ import data.Drinks;
 import data.FrozenCustards;
 import domain.*;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
@@ -67,7 +68,7 @@ public class Main {
                     );
                 }
                 kioskService.orderCheck2();  // [Total]
-                double totalPrice = cart.calculateTotalprice();
+                BigDecimal totalPrice = cart.calculateTotalprice();
                 System.out.println(" W " + totalPrice);
                 kioskService.orderCheck3();   // "1.주문, 2.메뉴판"
                 String completeOrder = sc.nextLine().strip();
