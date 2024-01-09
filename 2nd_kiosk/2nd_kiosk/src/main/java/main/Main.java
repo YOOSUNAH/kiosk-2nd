@@ -139,7 +139,7 @@ public class Main {
         String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedBurger != null) {
             System.out.println(selectedBurger.name + "가 장바구니에 추가되었습니다.\n");
-            Order orderInfo = new Order(selectedBurger.name, selectedBurger.price, selectedBurger.description, 1);
+            Order orderInfo = new Order(selectedBurger.name, selectedBurger.price, selectedBurger.description);
             addToCart(orderInfo, cart, sc, kioskService);
             return;  // 출력문이 안나오고 입력가능한 화면이 나왔다가 return 으로 메서드 종료 시켜 출력문이 나오게 되었다.
         } else if (askOrderToCart.equals("2. 취소")) {
@@ -165,7 +165,7 @@ public class Main {
         String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedFrozenCustards != null) {
             System.out.println(selectedFrozenCustards.name + "가 장바구니에 추가되었습니다.\n");
-            Order orderInfo = new Order(selectedFrozenCustards.name, selectedFrozenCustards.price, selectedFrozenCustards.description, 1);
+            Order orderInfo = new Order(selectedFrozenCustards.name, selectedFrozenCustards.price, selectedFrozenCustards.description);
             addToCart(orderInfo, cart, sc, kioskService);
             return;
         } else if (askOrderToCart.equals("2. 취소")) {
@@ -191,7 +191,7 @@ public class Main {
         String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedDrinks != null) {
             System.out.println(selectedDrinks.name + "가 장바구니에 추가되었습니다.\n");
-            Order orderInfo = new Order(selectedDrinks.name, selectedDrinks.price, selectedDrinks.description, 1);
+            Order orderInfo = new Order(selectedDrinks.name, selectedDrinks.price, selectedDrinks.description);
             addToCart(orderInfo, cart, sc, kioskService);
             return;
         } else if (askOrderToCart.equals("2. 취소")) {
@@ -218,7 +218,7 @@ public class Main {
         String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedBeer != null) {
             System.out.println(selectedBeer.name + "가 장바구니에 추가되었습니다.\n");
-            Order orderInfo = new Order(selectedBeer.name, selectedBeer.price, selectedBeer.description, 1);
+            Order orderInfo = new Order(selectedBeer.name, selectedBeer.price, selectedBeer.description);
             addToCart(orderInfo, cart, sc, kioskService);
             return;
         } else if (askOrderToCart.equals("2. 취소")) {
