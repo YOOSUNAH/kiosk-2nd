@@ -24,6 +24,9 @@ public class KioskService {
     public void buy() {
         print(screenData.getScreenData(ScreenStage.BUY));
     }
+    public void buyOption() {
+        print(screenData.getScreenData(ScreenStage.BUYOPTION));
+    }
 
     public void orderCheck1() {
         print(screenData.getScreenData(ScreenStage.ORDER_SECTOR_1));

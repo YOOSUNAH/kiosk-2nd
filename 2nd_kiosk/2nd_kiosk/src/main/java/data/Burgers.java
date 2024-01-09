@@ -6,7 +6,15 @@ public enum Burgers {
     BURGER_2("2", "SmokeShack", 8.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거"),
     BURGER_3("3", "Shroom Burger", 9.4, "몬스터 치즈와 체다 치즈로 속을 채운 베지테리안 버거"),
     BURGER_4("4", "Cheeseburger", 6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거"),
-    BURGER_5("5", "Hamburger", 5.4, "비프패티를 기반으로 야채가 들어간 기본버거");
+    BURGER_5("5", "Hamburger", 5.4, "비프패티를 기반으로 야채가 들어간 기본버거"),
+    BURGER_1_SINGLE("1", "Single", 5.4, ""),
+    BURGER_1_DOUBLE("2", "Double", 9.0, ""),
+    BURGER_2_SINGLE("1", "Single", 8.9, ""),
+    BURGER_2_DOUBLE("2", "Double", 12.9, ""),
+    BURGER_4_SINGLE("1", "Single", 6.9, ""),
+    BURGER_4_DOUBLE("2", "Double", 10.9, ""),
+    BURGER_5_SINGLE("1", "Single", 5.4, ""),
+    BURGER_5_DOUBLE("2", "Double", 9.0, "");
 
 
     //enum 생성자가 필수다

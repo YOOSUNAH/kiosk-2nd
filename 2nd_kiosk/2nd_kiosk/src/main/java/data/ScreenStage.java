@@ -8,6 +8,7 @@ public enum ScreenStage {
     BEERMENU,
     FROZENCUSTARDMENU,
     BUY, // 구매
+    BUYOPTION, // 상품 옵션 선택
     ORDER_SECTOR_1,  // 주문
     ORDER_SECTOR_2,
     ORDER_SECTOR_3,
