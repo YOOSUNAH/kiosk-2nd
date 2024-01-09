@@ -8,11 +8,10 @@ public class Order {
     private double price;
     private int quantity;
 
-    public Order(String name, double price, String description, int quantity) {
+    public Order(String name, double price, String description) {
         this.name = name;
         this.price = price;
         this.description = description;
-        this.quantity = quantity;
     }
 
     public String getName() {
@@ -27,13 +26,13 @@ public class Order {
         return price;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public double calculatePrice() {
-        return (getPrice() * quantity);
-    }
+//    public int getQuantity() {
+//        return quantity;
+//    }
+//
+//    public double calculatePrice() {
+//        return (getPrice() * quantity);
+//    }
 
  }
 
