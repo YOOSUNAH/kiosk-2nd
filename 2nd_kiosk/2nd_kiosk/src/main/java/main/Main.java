@@ -63,9 +63,10 @@ public class Main {
                     List<Order> orderList = cart.getOrderList();
                     for (Order order : orderList) {
                         System.out.println(
-                            String.format("%s | W %.1f | %s \n",
+                            String.format("%s | W %.1f | %d 개 | %s \n",
                                 order.getName(),
                                 order.getPrice(),
+                                order.getQuantity(),
                                 order.getDescription()
                             )
                         );

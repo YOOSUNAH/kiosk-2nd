@@ -5,7 +5,7 @@ public class Order {
     private String description;
     private double price;
     private int quantity;
-//    private int quantity;
+
 
     public Order(String name, double price, String description, int quantity) {
         this.name = name;
