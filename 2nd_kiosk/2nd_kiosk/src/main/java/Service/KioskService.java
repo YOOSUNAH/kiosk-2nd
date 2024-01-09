@@ -67,6 +67,9 @@ public class KioskService {
     public void totalSaleAmount2() {
         print(screenData.getScreenData(ScreenStage.TOTALSALEAMOUNT2));
     }
+    public void totalSaleList() {
+        print(screenData.getScreenData(ScreenStage.TOTALSALELIST));
+    }
 
 
     //

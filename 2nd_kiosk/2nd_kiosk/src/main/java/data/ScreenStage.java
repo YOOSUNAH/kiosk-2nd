@@ -17,7 +17,8 @@ public enum ScreenStage {
     ORDER_CANCEL,  // 주문 취소
     CANCEL_COMPLETE, // 주문 취소 완료
     TOTALSALEAMOUNT1,
-    TOTALSALEAMOUNT2
+    TOTALSALEAMOUNT2,
+    TOTALSALELIST
 
 
 //    BURGESR,
