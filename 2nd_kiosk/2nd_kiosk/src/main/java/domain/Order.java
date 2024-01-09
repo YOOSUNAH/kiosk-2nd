@@ -30,8 +30,8 @@ public class Order {
         return quantity;
     }
 
-    public int setQuantity(int quantity) {
-        return quantity;
+    public void setQuantity(int quantity) {
+       this.quantity = quantity;
     }
 
  }
