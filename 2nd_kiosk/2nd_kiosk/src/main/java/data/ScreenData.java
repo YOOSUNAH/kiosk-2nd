@@ -106,9 +106,9 @@ public class ScreenData {
             "5. Order       | 장바구니를 확인 후 주문합니다.\n" +
             "6. Cancel      | 진행중인 주문을 취소합니다.");
         screedDataMap.put(ScreenStage.TOTALSALEAMOUNT1, "[ 총 판매금액 현황 ]\n");
-        screedDataMap.put(ScreenStage.TOTALSALEAMOUNT2, "1. 돌아가기");
+        screedDataMap.put(ScreenStage.TOTALSALEAMOUNT2, "\n1. 돌아가기");
         screedDataMap.put(ScreenStage.TOTALSALELIST, "[ 총 판매상품 목록 현황 ]\n" +
-            "현재까지 총 판매된 상품 목록은 아래와 같습니다.");
+            "현재까지 총 판매된 상품 목록은 아래와 같습니다.\n");
         //SHAKESHACK MENU
 //        screedDataMap.put(ScreenStage.BURGESR, "Burgers");
 //        screedDataMap.put(ScreenStage.FROZENCUSTARD, "Frozen Custard");

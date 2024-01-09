@@ -1,18 +1,17 @@
 package domain;
 
-import java.awt.*;
-
 public class Order {
     private String name;
     private String description;
     private double price;
+    private int quantity;
 //    private int quantity;
 
-    public Order(String name, double price, String description) { // int quantity
+    public Order(String name, double price, String description, int quantity) {
         this.name = name;
         this.price = price;
         this.description = description;
-//        this.quantity = quantity;
+        this.quantity = quantity;
     }
 
     public String getName() {
@@ -27,9 +26,13 @@ public class Order {
         return price;
     }
 
-//    public int getQuantity() {
-//        return quantity;
-//    }
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public int setQuantity(int quantity) {
+        return quantity;
+    }
 //
 //    public double calculatePrice() {
 //        return (getPrice() * quantity);

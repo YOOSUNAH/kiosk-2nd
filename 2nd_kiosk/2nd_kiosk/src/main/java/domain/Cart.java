@@ -18,10 +18,22 @@ public class Cart {
         this.totalSaleAmount = totalSaleAmount;  // 초기화
     }
 
-    public void addOrder(Order order) {
-        orderList.add(order);
-        totalList.add(order);
-        totalSaleAmount += order.getPrice();
+    public void addOrder(Order order, int itemCount) {
+        boolean found = false;
+        for(Order existingOrder : orderList){
+            if(existingOrder.getName().equals(order.getName())){
+                existingOrder.setQuantity(existingOrder.getQuantity() + 1);
+                found = true;
+                break;
+            }
+        }
+        if(!found){
+            orderList.add(order);
+            totalList.add(order);
+            totalSaleAmount += order.getPrice() * itemCount;  // * itemCount 없어도 계산이 맞았는데 곱하면 안틀릴까?
+            order.setQuantity(order.getQuantity());
+
+        }
     }
 
 

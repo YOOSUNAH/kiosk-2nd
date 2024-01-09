@@ -80,12 +80,10 @@ public class Main {
                         System.out.println("대기번호는 [ " + cart.getOrderNumber() + " ] 번 입니다.");
                         cart.incrementOrderNumber();
                         kioskService.decideOrder2();
-                        cart.cancelOrder(); // 주문 완료 후 장바구니 초기화 해야함.
                         kioskService.mainMenu();
-
+                        cart.cancelOrder(); // 주문 완료 후 장바구니 초기화 해야함.
                     } else if (completeOrder.equals("2. 메뉴판")) {  // 장바구니 초기화 하면 안됨.
                         kioskService.mainMenu();
-
                     }
                     break;
                 case "Cancel":
@@ -97,7 +95,6 @@ public class Main {
                         kioskService.mainMenu();
                     } else if (cancelprogress.equals("2. 취소")) {
                         kioskService.mainMenu();
-
                     }
                     break;
                 case "0":
@@ -152,7 +149,7 @@ public class Main {
         String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedBurger != null) {
             System.out.println(selectedBurger.name + "가 장바구니에 추가되었습니다.\n");
-            Order orderInfo = new Order(selectedBurger.name, selectedBurger.price, selectedBurger.description);
+            Order orderInfo = new Order(selectedBurger.name, selectedBurger.price, selectedBurger.description, 1);
             addToCart(orderInfo, cart, sc, kioskService);
             return;  // 출력문이 안나오고 입력가능한 화면이 나왔다가 return 으로 메서드 종료 시켜 출력문이 나오게 되었다.
         } else if (askOrderToCart.equals("2. 취소")) {
@@ -178,7 +175,7 @@ public class Main {
         String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedFrozenCustards != null) {
             System.out.println(selectedFrozenCustards.name + "가 장바구니에 추가되었습니다.\n");
-            Order orderInfo = new Order(selectedFrozenCustards.name, selectedFrozenCustards.price, selectedFrozenCustards.description);
+            Order orderInfo = new Order(selectedFrozenCustards.name, selectedFrozenCustards.price, selectedFrozenCustards.description, 1);
             addToCart(orderInfo, cart, sc, kioskService);
             return;
         } else if (askOrderToCart.equals("2. 취소")) {
@@ -204,7 +201,7 @@ public class Main {
         String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedDrinks != null) {
             System.out.println(selectedDrinks.name + "가 장바구니에 추가되었습니다.\n");
-            Order orderInfo = new Order(selectedDrinks.name, selectedDrinks.price, selectedDrinks.description);
+            Order orderInfo = new Order(selectedDrinks.name, selectedDrinks.price, selectedDrinks.description, 1);
             addToCart(orderInfo, cart, sc, kioskService);
             return;
         } else if (askOrderToCart.equals("2. 취소")) {
@@ -231,7 +228,7 @@ public class Main {
         String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedBeer != null) {
             System.out.println(selectedBeer.name + "가 장바구니에 추가되었습니다.\n");
-            Order orderInfo = new Order(selectedBeer.name, selectedBeer.price, selectedBeer.description);
+            Order orderInfo = new Order(selectedBeer.name, selectedBeer.price, selectedBeer.description, 1);
             addToCart(orderInfo, cart, sc, kioskService);
             return;
         } else if (askOrderToCart.equals("2. 취소")) {
@@ -241,9 +238,9 @@ public class Main {
     }
 
     private static void addToCart(Order selectedOrder, Cart cart, Scanner sc, KioskService kioskService) {
-        cart.addOrder(selectedOrder);
+        cart.addOrder(selectedOrder, 1);
         kioskService.mainMenu();
-        orderProcess(sc, kioskService, cart);
+
     }
 }
 
