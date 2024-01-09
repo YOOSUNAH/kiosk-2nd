@@ -33,10 +33,6 @@ public class Order {
     public int setQuantity(int quantity) {
         return quantity;
     }
-//
-//    public double calculatePrice() {
-//        return (getPrice() * quantity);
-//    }
 
  }
 

@@ -235,13 +235,11 @@ public class Main {
         } else if (askOrderToCart.equals("2. 취소")) {
             kioskService.mainMenu();
         }
-
     }
 
     private static void addToCart(Order selectedOrder, Cart cart, Scanner sc, KioskService kioskService) {
-        cart.addOrder(selectedOrder, 1);
+        cart.addOrder(selectedOrder, selectedOrder.getQuantity());
         kioskService.mainMenu();
-
     }
 }
 

@@ -14,7 +14,7 @@ public enum Burgers {
     BURGER_4_SINGLE("1", "Single", 6.9, ""),
     BURGER_4_DOUBLE("2", "Double", 10.9, ""),
     BURGER_5_SINGLE("1", "Single", 5.4, ""),
-    BURGER_5_DOUBLE("2", "Double", 9.0, "");
+    BURGER_5_DOUBLE("2", "Double", 9.0, "" );
 
 
     //enum 생성자가 필수다
@@ -22,6 +22,7 @@ public enum Burgers {
     public final String name;
     public final double price;
     public final String description;
+
 
     // 개인 공부용 주석
     // private final String name 이면 아래처럼 getter를 만들어야 한다.
@@ -33,5 +34,6 @@ public enum Burgers {
         this.name = name;
         this.price = price;
         this.description = description;
+
     }
 }
