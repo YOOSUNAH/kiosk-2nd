@@ -48,19 +48,19 @@ public class ScreenData {
             "2. Shake of the Week | W 6.5 | 특별한 커스터드 플레이버\n" +
             "3. Red Bean Shake    | W 5.9 | 신비한 커스터드와 함께 우유와 레드빈이 블렌딩 된 시즈널 쉐이크\n" +
             "4. Floats            | W 5.9 | 루트 비어, 퍼플 카우, 크림시클\n" +
-            "5. Cups & Cones      | W 4.9 | 바닐라, 초콜렛, Flavor of the Week\n" +
+            "5. Cups_Cones      | W 4.9 | 바닐라, 초콜렛, Flavor of the Week\n" +
             "6. Concretes         | W 5.9 | 쉐이크쉑의 쫀득한 커스터드와 다양한 믹스-인의 조합");
 
         screedDataMap.put(ScreenStage.DRINKSMENU, " \"SHAKESHACK BURGER 에 오신걸 환영합니다.\"\n" +
             "아래 상품메뉴판을 보시고 상품을 골라 입력해주세요.\n" +
             "\n" +
             "[ Drinks MENU ]\n" +
-            "1. Shack-made Lemonade   | W 3.9 | 매장에서 직접 만드는 상큼한 레몬에이드\n" +
-            "2. Fresh Brewed Iced Tea | W 3.4 | 직접 유기농 홍차를 우려낸 아이스티\n" +
-            "3. Fifty/Fifty           | W 3.5 | 레몬에이드와 아이스티의 만남\n" +
-            "4. Fountain Soda         | W 2.7 | 코카콜라, 코카콜라제로, 스프라이트, 환타 오렌지, 한타 그레이프\n" +
-            "5. Abita Root Beer       | W 4.4 | 청량감 있는 독특한 미국식 무알콜 탄산음료\n" +
-            "6. Bottled Water         | W 1.0 | 지리산 암반대수층으로 만든 프리미엄 생수");
+            "1. Shack_made_Lemonade   | W 3.9 | 매장에서 직접 만드는 상큼한 레몬에이드\n" +
+            "2. Fresh_Brewed_Iced_Tea | W 3.4 | 직접 유기농 홍차를 우려낸 아이스티\n" +
+            "3. Fifty_Fifty           | W 3.5 | 레몬에이드와 아이스티의 만남\n" +
+            "4. Fountain_Soda         | W 2.7 | 코카콜라, 코카콜라제로, 스프라이트, 환타 오렌지, 한타 그레이프\n" +
+            "5. Abita_Root_Beer       | W 4.4 | 청량감 있는 독특한 미국식 무알콜 탄산음료\n" +
+            "6. Bottled_Water         | W 1.0 | 지리산 암반대수층으로 만든 프리미엄 생수");
 
         screedDataMap.put(ScreenStage.BEERMENU, " \"SHAKESHACK BURGER 에 오신걸 환영합니다.\"\n" +
             "아래 상품메뉴판을 보시고 상품을 골라 입력해주세요.\n" +
