@@ -214,31 +214,29 @@ public class Main {
                     );
                     // 사용자의 선택에 따라 옵션 처리
                     String selectedOption = sc.nextLine().strip();
-                    for (FrozenCustards FrozenCustardsOption : FrozenCustards.values()) {
+
                         if (selectedOption.equals("1")) {
-                            String single = FrozenCustards.valueOf(FrozenCustardsOption.name + "_Single").description;
+                            String single = FrozenCustards.valueOf(selectedFrozenCustards.name + "_Single").description;
                             System.out.print(
                                 String.format("%s(%s) | W %.1f | %s \n",
-                                    FrozenCustardsOption.name,
+                                    selectedFrozenCustards.name,
                                     single,
-                                    FrozenCustardsOption.price,
-                                    FrozenCustardsOption.description
+                                    selectedFrozenCustards.price,
+                                    selectedFrozenCustards.description
                                 )
                             );
 
                         } else if (selectedOption.equals("2")) {
-                            String Doulbe = FrozenCustards.valueOf(FrozenCustardsOption.name + "_Double").description;
+                            String Doulbe = FrozenCustards.valueOf(selectedFrozenCustards.name + "_Double").description;
                             System.out.print(
                                 String.format("%s(%s) | W %.1f | %s \n",
-                                    FrozenCustardsOption.name,
+                                    selectedFrozenCustards.name,
                                     Doulbe,
-                                    FrozenCustards.valueOf(FrozenCustardsOption.name + "_Double").price,
-                                    FrozenCustardsOption.description
+                                    FrozenCustards.valueOf(selectedFrozenCustards.name + "_Double").price,
+                                    selectedFrozenCustards.description
                                 )
                             );
                         }
-                        break;
-                    }
                 }
 
         kioskService.buy();  //   "위 메뉴를 장바구니에 추가하시겠습니까?\n"
