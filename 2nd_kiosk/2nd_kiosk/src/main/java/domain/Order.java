@@ -6,7 +6,6 @@ public class Order {
     private double price;
     private int quantity;
 
-
     public Order(String name, double price, String description, int quantity) {
         this.name = name;
         this.price = price;
@@ -31,8 +30,7 @@ public class Order {
     }
 
     public void setQuantity(int quantity) {
-       this.quantity = quantity;
+        this.quantity = quantity;
     }
-
- }
+}
 

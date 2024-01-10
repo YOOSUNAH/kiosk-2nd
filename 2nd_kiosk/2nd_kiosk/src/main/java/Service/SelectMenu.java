@@ -11,11 +11,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SelectMenu {
-
-
     Cart cart = new Cart(new ArrayList<>(), new ArrayList<>(), 1, 0);
-
-
 
     public void selectBurger(KioskService kioskService, String orderBurger, Scanner sc, Cart cart) {
         Burgers selectedBurger = null;
@@ -29,47 +25,44 @@ public class SelectMenu {
                     )
                 );
                 selectedBurger = burger;
-                // 추가 기능 구현 중
                 System.out.println(
                     "위 메뉴의 어떤 옵션으로 추가하시겠습니까?\n"
                         + "1. Single(W " + selectedBurger.price
                         + ") 2. Double(W " + Burgers.valueOf(selectedBurger.name + "_Double").price
                         + ")"
                 );
-                break;  // 출력하고 for문 break;
+                break;
             }
-
         }
-        // 사용자의 선택에 따라 옵션 처리
         String selectedOption = sc.nextLine().strip();
-            if (selectedOption.equals("1")) {
-                String single = Burgers.valueOf(selectedBurger.name + "_Single").description;
-                System.out.print(
-                    String.format("%s(%s) | W %.1f | %s \n",
-                        selectedBurger.name,
-                        single,
-                        selectedBurger.price,
-                        selectedBurger.description
-                    )
-                );
-            } else if (selectedOption.equals("2")) {
-                String Doulbe = Burgers.valueOf(selectedBurger.name + "_Double").description;
-                System.out.print(
-                    String.format("%s(%s) | W %.1f | %s \n",
-                        selectedBurger.name,
-                        Doulbe,
-                        Burgers.valueOf(selectedBurger.name + "_Double").price,
-                        selectedBurger.description
-                    )
-                );
+        if (selectedOption.equals("1")) {
+            String single = Burgers.valueOf(selectedBurger.name + "_Single").description;
+            System.out.print(
+                String.format("%s(%s) | W %.1f | %s \n",
+                    selectedBurger.name,
+                    single,
+                    selectedBurger.price,
+                    selectedBurger.description
+                )
+            );
+        } else if (selectedOption.equals("2")) {
+            String Doulbe = Burgers.valueOf(selectedBurger.name + "_Double").description;
+            System.out.print(
+                String.format("%s(%s) | W %.1f | %s \n",
+                    selectedBurger.name,
+                    Doulbe,
+                    Burgers.valueOf(selectedBurger.name + "_Double").price,
+                    selectedBurger.description
+                )
+            );
         }
-        kioskService.buy();  // 위 메뉴를 장바구니에 추가하시겠습니까?
+        kioskService.buy();
         String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedBurger != null) {
             System.out.println(selectedBurger.name + "가 장바구니에 추가되었습니다.\n");
             Order orderInfo = new Order(selectedBurger.name, selectedBurger.price, selectedBurger.description, 1);
             cart.addToCart(orderInfo, cart, sc, kioskService);
-            return;  // 출력문이 안나오고 입력가능한 화면이 나왔다가 return 으로 메서드 종료 시켜 출력문이 나오게 되었다.
+            return;
         } else if (askOrderToCart.equals("2. 취소")) {
             kioskService.mainMenu();
         }
@@ -90,16 +83,13 @@ public class SelectMenu {
             }
             selectedFrozenCustards = frozenCustards;
         }
-        // 추가 기능 구현 중
         if (selectedFrozenCustards.name.equals("Cups_Cones") || selectedFrozenCustards.name.equals("Concretes")) {
             System.out.println("위 메뉴의 어떤 옵션으로 추가하시겠습니까?\n"
                 + "1. Single(W " + selectedFrozenCustards.price
                 + ") 2. Double(W " + FrozenCustards.valueOf(selectedFrozenCustards.name + "_Double").price
                 + ")"
             );
-            // 사용자의 선택에 따라 옵션 처리
             String selectedOption = sc.nextLine().strip();
-
             if (selectedOption.equals("1")) {
                 String single = FrozenCustards.valueOf(selectedFrozenCustards.name + "_Single").description;
                 System.out.print(
@@ -110,7 +100,6 @@ public class SelectMenu {
                         selectedFrozenCustards.description
                     )
                 );
-
             } else if (selectedOption.equals("2")) {
                 String Doulbe = FrozenCustards.valueOf(selectedFrozenCustards.name + "_Double").description;
                 System.out.print(
@@ -124,7 +113,7 @@ public class SelectMenu {
             }
         }
 
-        kioskService.buy();  //   "위 메뉴를 장바구니에 추가하시겠습니까?\n"
+        kioskService.buy();
         String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedFrozenCustards != null) {
             System.out.println(selectedFrozenCustards.name + "가 장바구니에 추가되었습니다.\n");
@@ -150,8 +139,6 @@ public class SelectMenu {
             }
             selectedDrinks = drink;
         }
-        // 추가 기능 구현 중
-        // Abita_Root_Be , Bottled_Water 아닌 경우
         if (!selectedDrinks.name.equals("Abita_Root_Be") && !selectedDrinks.name.equals("Bottled_Water")) {
             System.out.println(
                 "위 메뉴의 어떤 옵션으로 추가하시겠습니까?\n"
@@ -159,7 +146,6 @@ public class SelectMenu {
                     + ") 2. Large(W " + Drinks.valueOf(selectedDrinks.name + "_Large").price
                     + ")"
             );
-            // 사용자의 선택에 따라 옵션 처리
             String selectedOption = sc.nextLine().strip();
             if (selectedOption.equals("1")) {
                 String regular = Drinks.valueOf(selectedDrinks.name + "_Regular").description;
@@ -220,7 +206,4 @@ public class SelectMenu {
             kioskService.mainMenu();
         }
     }
-
-
-
 }

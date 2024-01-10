@@ -1,7 +1,6 @@
 package domain;
 
 public class Beer extends Menu {
-
     private String name;
     private String description;
     private int price;

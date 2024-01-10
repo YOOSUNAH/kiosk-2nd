@@ -8,14 +8,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class OrderProcess {
-
-
     public void orderProcess(Scanner sc, KioskService kioskService, Cart cart) {
         SelectMenu selectMenu = new SelectMenu();
-
         boolean isRunning = true;
         while (isRunning) {
-            // 상품 메뉴 선택 시
             String customerMenu = sc.nextLine().strip();
             String orderBeer;
             String orderDrinks;
@@ -45,7 +41,7 @@ public class OrderProcess {
                     selectMenu.selectBeer(kioskService, orderBeer, sc, cart);
                     break;
                 case "Order":
-                    orderFeatures(sc,kioskService, cart);
+                    orderFeatures(sc, kioskService, cart);
                     break;
                 case "Cancel":
                     kioskService.orderCancel();   // "진행하던 주문을 취소하시겠습니까?\n" +
@@ -59,7 +55,7 @@ public class OrderProcess {
                     }
                     break;
                 case "0":
-                    hiddenFeatures(sc,kioskService, cart);
+                    hiddenFeatures(sc, kioskService, cart);
                     break;
                 default:
                     System.out.println("잘못된 입력입니다. 다시 입력해주세요");
@@ -69,9 +65,7 @@ public class OrderProcess {
         }
     }
 
-
     public void hiddenFeatures(Scanner sc, KioskService kioskService, Cart cart) {
-        // 총 판매 금액 조회
         double totalSaleAmount = cart.getTotalSaleAmount();
         kioskService.totalSaleAmount1();
         System.out.println(String.format("현재까지 총 판매된 금액은 [ W %.1f ] 입니다.", totalSaleAmount));
@@ -97,8 +91,6 @@ public class OrderProcess {
 
     public void orderFeatures(Scanner sc, KioskService kioskService, Cart cart) {
         kioskService.orderCheck1();
-        // 장바구니 보여주기
-        //  Cart에 추가된 Order 리스트 가져와보기
         List<Order> orderList = cart.getOrderList();
         for (Order order : orderList) {
             System.out.println(
@@ -121,8 +113,8 @@ public class OrderProcess {
             cart.incrementOrderNumber();
             kioskService.decideOrder2();
             kioskService.mainMenu();
-            cart.cancelOrder(); // 주문 완료 후 장바구니 초기화 해야함.
-        } else if (completeOrder.equals("2. 메뉴판")) {  // 장바구니 초기화 하면 안됨.
+            cart.cancelOrder();
+        } else if (completeOrder.equals("2. 메뉴판")) {
             kioskService.mainMenu();
         }
     }
