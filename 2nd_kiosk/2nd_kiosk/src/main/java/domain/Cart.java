@@ -1,7 +1,10 @@
 package domain;
 
+import Service.KioskService;
+
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Scanner;
 
 public class Cart {
 
@@ -36,6 +39,10 @@ public class Cart {
         }
     }
 
+    public void addToCart(Order selectedOrder, Cart cart, Scanner sc, KioskService kioskService) {
+        cart.addOrder(selectedOrder, selectedOrder.getQuantity());
+        kioskService.mainMenu();
+    }
 
     // 정확한 계산을 위해서 BigDecimal class 사용!
     public BigDecimal calculateTotalprice() {
