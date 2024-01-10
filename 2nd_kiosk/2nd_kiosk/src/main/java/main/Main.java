@@ -102,34 +102,39 @@ public class Main {
                     }
                     break;
                 case "0":
-                    // 총 판매 금액 조회
-                    double totalSaleAmount = cart.getTotalSaleAmount();
-                    kioskService.totalSaleAmount1();
-                    System.out.println(String.format("현재까지 총 판매된 금액은 [ W %.1f ] 입니다.", totalSaleAmount));
-                    kioskService.totalSaleAmount2();
-                    String combackToMainMenu = sc.nextLine().strip();
-                    if (combackToMainMenu.equals("1. 돌아가기")) {
-                        kioskService.mainMenu();
-                        orderProcess(sc, kioskService, cart);
-                    } else if (combackToMainMenu.equals("0")) {
-                        kioskService.totalSaleList();
-                        List<Order> totalList = cart.getTotalList();
-                        for (Order order : totalList) {
-                            System.out.println(
-                                String.format("- %s | W %.1f",
-                                    order.getName(),
-                                    order.getPrice()
-                                )
-                            );
-                        }
-                        kioskService.totalSaleAmount2();
-                    }
+                    hiddenFeatures(sc,kioskService, cart);
                     break;
                 default:
                     System.out.println("잘못된 입력입니다. 다시 입력해주세요");
                     kioskService.mainMenu();
                     break;
             }
+        }
+    }
+
+
+    public static void hiddenFeatures(Scanner sc, KioskService kioskService, Cart cart) {
+        // 총 판매 금액 조회
+        double totalSaleAmount = cart.getTotalSaleAmount();
+        kioskService.totalSaleAmount1();
+        System.out.println(String.format("현재까지 총 판매된 금액은 [ W %.1f ] 입니다.", totalSaleAmount));
+        kioskService.totalSaleAmount2();
+        String combackToMainMenu = sc.nextLine().strip();
+        if (combackToMainMenu.equals("1. 돌아가기")) {
+            kioskService.mainMenu();
+            orderProcess(sc, kioskService, cart);
+        } else if (combackToMainMenu.equals("0")) {
+            kioskService.totalSaleList();
+            List<Order> totalList = cart.getTotalList();
+            for (Order order : totalList) {
+                System.out.println(
+                    String.format("- %s | W %.1f",
+                        order.getName(),
+                        order.getPrice()
+                    )
+                );
+            }
+            kioskService.totalSaleAmount2();
         }
     }
 }

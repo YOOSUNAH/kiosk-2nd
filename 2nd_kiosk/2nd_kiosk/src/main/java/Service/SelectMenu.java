@@ -28,42 +28,40 @@ public class SelectMenu {
                         burger.description
                     )
                 );
+                selectedBurger = burger;
                 // 추가 기능 구현 중
                 System.out.println(
                     "위 메뉴의 어떤 옵션으로 추가하시겠습니까?\n"
-                        + "1. Single(W " + burger.price
-                        + ") 2. Double(W " + Burgers.valueOf(burger.name + "_Double").price
+                        + "1. Single(W " + selectedBurger.price
+                        + ") 2. Double(W " + Burgers.valueOf(selectedBurger.name + "_Double").price
                         + ")"
                 );
                 break;  // 출력하고 for문 break;
             }
-            selectedBurger = burger;
+
         }
         // 사용자의 선택에 따라 옵션 처리
         String selectedOption = sc.nextLine().strip();
-        for (Burgers burgerOption : Burgers.values()) {
             if (selectedOption.equals("1")) {
-                String single = Burgers.valueOf(burgerOption.name + "_Single").description;
+                String single = Burgers.valueOf(selectedBurger.name + "_Single").description;
                 System.out.print(
                     String.format("%s(%s) | W %.1f | %s \n",
-                        burgerOption.name,
+                        selectedBurger.name,
                         single,
-                        burgerOption.price,
-                        burgerOption.description
+                        selectedBurger.price,
+                        selectedBurger.description
                     )
                 );
             } else if (selectedOption.equals("2")) {
-                String Doulbe = Burgers.valueOf(burgerOption.name + "_Double").description;
+                String Doulbe = Burgers.valueOf(selectedBurger.name + "_Double").description;
                 System.out.print(
                     String.format("%s(%s) | W %.1f | %s \n",
-                        burgerOption.name,
+                        selectedBurger.name,
                         Doulbe,
-                        Burgers.valueOf(burgerOption.name + "_Double").price,
-                        burgerOption.description
+                        Burgers.valueOf(selectedBurger.name + "_Double").price,
+                        selectedBurger.description
                     )
                 );
-            }
-            break;
         }
         kioskService.buy();  // 위 메뉴를 장바구니에 추가하시겠습니까?
         String askOrderToCart = sc.nextLine().strip();
