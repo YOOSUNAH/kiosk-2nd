@@ -74,7 +74,7 @@ public class ScreenData {
                 "1. 확인        2. 취소");
 
         screedDataMap.put(ScreenStage.BUYOPTION,
-            "위 메뉴의 어떤 옵셔으로 추가하시겠습니까?\n");
+            "위 메뉴의 어떤 옵션으로 추가하시겠습니까?\n");
 
         screedDataMap.put(ScreenStage.ORDER_SECTOR_1, "아래와 같이 주문 하시겠습니까?\n" +
             "\n" +

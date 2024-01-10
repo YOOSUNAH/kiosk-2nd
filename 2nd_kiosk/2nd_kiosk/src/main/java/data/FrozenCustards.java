@@ -8,7 +8,11 @@ public enum FrozenCustards {
     FrozenCustard_4("4", "Floats", 5.9,"루트 비어, 퍼플 카우, 크림시클"),
 
     FrozenCustard_5("5", "Cups & Cones", 4.9, "바닐라, 초콜렛, Flavor of the Week"),
-    FrozenCustard_6("6", "Concretess", 1.0, "지리산 암반대수층으로 만든 프리미엄 생수");
+    FrozenCustard_6("6", "Concretess", 1.0, "지리산 암반대수층으로 만든 프리미엄 생수"),
+    FrozenCustard_5_SINGLE("1", "Cups & Cones Single", 4.9, "Single"),
+    FrozenCustard_5_DOUBLE("2", "Cups & Cones Double", 5.9, "Double"),
+    FrozenCustard_6_SINGLE("1", "Cups & Cones Single", 4.9, "Single"),
+    FrozenCustard_6_DOUBLE("2", "Cups & Cones Double", 5.9, "Double");
 
     //enum 생성자가 필수다
     public final String no;

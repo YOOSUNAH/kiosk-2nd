@@ -130,22 +130,73 @@ public class Main {
         }
     }
 
-
-
     private static void selectBurger(KioskService kioskService, String orderBurger, Scanner sc, Cart cart) {
         Burgers selectedBurger = null;
 
+        /// 추가 기능 구현 중
         for (Burgers burger : Burgers.values()) {
             if (orderBurger.equals(burger.name)) {
-                System.out.println(
+                System.out.print(
                     String.format("%s | W %.1f | %s \n",
                         burger.name,
                         burger.price,
-                        burger.description)
+                        burger.description
+                    )
                 );
-                selectedBurger = burger;
             }
+
+            double burgerDoublePrice = Burgers.valueOf(burger.name + "_Double").price;
+            System.out.println(
+                "위 메뉴의 어떤 옵션으로 추가하시겠습니까?\n"
+                    + "1. Single(W " + burger.price
+                            + ") 2. Double(W " + burgerDoublePrice
+                    + ")\n"
+            );
+
+            selectedBurger = burger;
+            break;
         }
+
+//                // 사용자의 선택에 따라 옵션 처리
+//                String selectedOption = sc.nextLine().strip();
+//                for (Burgers burgerOption : Burgers.values()) {
+//                    if (selectedOption.equals("1")) {
+//                        if (orderBurger.equals(burgerOption.name)) {
+//                            System.out.println(
+//                                String.format("%s(%s) | W %.1f | %s \n",
+//                                    burgerOption.name,
+//                                    Burgers.valueOf(burgerOption.name + "Single").description,
+//                                    burgerOption.price,
+//                                    burgerOption.description)
+//                            );
+//                            selectedBurger = burgerOption;
+//                        }
+//                    } else if (selectedOption.equals("2")) {
+//                        if (orderBurger.equals(burgerOption.name)) {
+//                            System.out.println(
+//                                String.format("%s(%s) | W %.1f | %s \n",
+//                                    burgerOption.name,
+//                                    Burgers.valueOf(burgerOption.name + "Double").description,
+//                                    Burgers.valueOf(burgerOption.name + "Double").price,
+//                                    burgerOption.description)
+//                            );
+//                            selectedBurger = burgerOption;
+//                        }
+//                    }
+//                }
+//            }
+//                kioskService.buy();  // 위 메뉴를 장바구니에 추가하시겠습니까?
+//                String askOrderToCart = sc.nextLine().strip();
+//                if (askOrderToCart.equals("1. 확인") && selectedBurger != null) {
+//                    System.out.println(selectedBurger.name + "가 장바구니에 추가되었습니다.\n");
+//                    Order orderInfo = new Order(selectedBurger.name, selectedBurger.price, selectedBurger.description, 1);
+//                    addToCart(orderInfo, cart, sc, kioskService);
+//                    return;  // 출력문이 안나오고 입력가능한 화면이 나왔다가 return 으로 메서드 종료 시켜 출력문이 나오게 되었다.
+//                } else if (askOrderToCart.equals("2. 취소")) {
+//                    kioskService.mainMenu();
+//                }
+//            }
+        ;
         kioskService.buy();  // 위 메뉴를 장바구니에 추가하시겠습니까?
         String askOrderToCart = sc.nextLine().strip();
         if (askOrderToCart.equals("1. 확인") && selectedBurger != null) {
@@ -158,7 +209,9 @@ public class Main {
         }
     }
 
-    private static void selectFrozenCustard(KioskService kioskService, String orderFrozenCustrad, Scanner sc, Cart cart) {
+
+    private static void selectFrozenCustard(KioskService kioskService, String orderFrozenCustrad, Scanner sc, Cart
+        cart) {
         FrozenCustards selectedFrozenCustards = null;
         for (FrozenCustards frozenCustards : FrozenCustards.values()) {
             if (orderFrozenCustrad.equals(frozenCustards.name)) {
