@@ -206,38 +206,38 @@ public class Main {
             selectedFrozenCustards = frozenCustards;
         }
         // 추가 기능 구현 중
-                if (selectedFrozenCustards.name.equals("Cups_Cones") || selectedFrozenCustards.name.equals("Concretes")) {
-                    System.out.println("위 메뉴의 어떤 옵션으로 추가하시겠습니까?\n"
-                        + "1. Single(W " + selectedFrozenCustards.price
-                        + ") 2. Double(W " + FrozenCustards.valueOf(selectedFrozenCustards.name + "_Double").price
-                        + ")"
-                    );
-                    // 사용자의 선택에 따라 옵션 처리
-                    String selectedOption = sc.nextLine().strip();
+        if (selectedFrozenCustards.name.equals("Cups_Cones") || selectedFrozenCustards.name.equals("Concretes")) {
+            System.out.println("위 메뉴의 어떤 옵션으로 추가하시겠습니까?\n"
+                + "1. Single(W " + selectedFrozenCustards.price
+                + ") 2. Double(W " + FrozenCustards.valueOf(selectedFrozenCustards.name + "_Double").price
+                + ")"
+            );
+            // 사용자의 선택에 따라 옵션 처리
+            String selectedOption = sc.nextLine().strip();
 
-                        if (selectedOption.equals("1")) {
-                            String single = FrozenCustards.valueOf(selectedFrozenCustards.name + "_Single").description;
-                            System.out.print(
-                                String.format("%s(%s) | W %.1f | %s \n",
-                                    selectedFrozenCustards.name,
-                                    single,
-                                    selectedFrozenCustards.price,
-                                    selectedFrozenCustards.description
-                                )
-                            );
+            if (selectedOption.equals("1")) {
+                String single = FrozenCustards.valueOf(selectedFrozenCustards.name + "_Single").description;
+                System.out.print(
+                    String.format("%s(%s) | W %.1f | %s \n",
+                        selectedFrozenCustards.name,
+                        single,
+                        selectedFrozenCustards.price,
+                        selectedFrozenCustards.description
+                    )
+                );
 
-                        } else if (selectedOption.equals("2")) {
-                            String Doulbe = FrozenCustards.valueOf(selectedFrozenCustards.name + "_Double").description;
-                            System.out.print(
-                                String.format("%s(%s) | W %.1f | %s \n",
-                                    selectedFrozenCustards.name,
-                                    Doulbe,
-                                    FrozenCustards.valueOf(selectedFrozenCustards.name + "_Double").price,
-                                    selectedFrozenCustards.description
-                                )
-                            );
-                        }
-                }
+            } else if (selectedOption.equals("2")) {
+                String Doulbe = FrozenCustards.valueOf(selectedFrozenCustards.name + "_Double").description;
+                System.out.print(
+                    String.format("%s(%s) | W %.1f | %s \n",
+                        selectedFrozenCustards.name,
+                        Doulbe,
+                        FrozenCustards.valueOf(selectedFrozenCustards.name + "_Double").price,
+                        selectedFrozenCustards.description
+                    )
+                );
+            }
+        }
 
         kioskService.buy();  //   "위 메뉴를 장바구니에 추가하시겠습니까?\n"
         String askOrderToCart = sc.nextLine().strip();
@@ -263,46 +263,40 @@ public class Main {
                 );
                 break;
             }
-        }
-        for (Drinks drink : Drinks.values()) {
-            // Abita_Root_Be , Bottled_Water 아닌 경우
-            if (!orderDrinks.equals("Abita_Root_Be") && !orderDrinks.equals("Bottled_Water")) {
-                // 추가 기능 구현 중
-                System.out.println(
-                    "위 메뉴의 어떤 옵션으로 추가하시겠습니까?\n"
-                        + "1. Regular(W " + drink.price
-                        + ") 2. Large(W " + Burgers.valueOf(drink.name + "_Large").price
-                        + ")"
-                );
-                // 사용자의 선택에 따라 옵션 처리
-                String selectedOption = sc.nextLine().strip();
-                for (Drinks drinksOption : Drinks.values()) {
-                    if (selectedOption.equals("1")) {
-                        String regular = Drinks.valueOf(drinksOption.name + "_Regular").description;
-                        System.out.print(
-                            String.format("%s(%s) | W %.1f | %s \n",
-                                drinksOption.name,
-                                regular,
-                                drinksOption.price,
-                                drinksOption.description
-                            )
-                        );
-                    } else if (selectedOption.equals("2")) {
-                        String large = Drinks.valueOf(drinksOption.name + "_Large").description;
-                        System.out.print(
-                            String.format("%s(%s) | W %.1f | %s \n",
-                                drinksOption.name,
-                                large,
-                                Drinks.valueOf(drinksOption.name + "_Double").price,
-                                drinksOption.description
-                            )
-                        );
-                    }
-                    break;
-                }
-                break;
-            }
             selectedDrinks = drink;
+        }
+        // 추가 기능 구현 중
+        // Abita_Root_Be , Bottled_Water 아닌 경우
+        if (!selectedDrinks.name.equals("Abita_Root_Be") && !selectedDrinks.name.equals("Bottled_Water")) {
+            System.out.println(
+                "위 메뉴의 어떤 옵션으로 추가하시겠습니까?\n"
+                    + "1. Regular(W " + selectedDrinks.price
+                    + ") 2. Large(W " + Drinks.valueOf(selectedDrinks.name + "_Large").price
+                    + ")"
+            );
+            // 사용자의 선택에 따라 옵션 처리
+            String selectedOption = sc.nextLine().strip();
+            if (selectedOption.equals("1")) {
+                String regular = Drinks.valueOf(selectedDrinks.name + "_Regular").description;
+                System.out.print(
+                    String.format("%s(%s) | W %.1f | %s \n",
+                        selectedDrinks.name,
+                        regular,
+                        selectedDrinks.price,
+                        selectedDrinks.description
+                    )
+                );
+            } else if (selectedOption.equals("2")) {
+                String large = Drinks.valueOf(selectedDrinks.name + "_Large").description;
+                System.out.print(
+                    String.format("%s(%s) | W %.1f | %s \n",
+                        selectedDrinks.name,
+                        large,
+                        Drinks.valueOf(selectedDrinks.name + "_Large").price,
+                        selectedDrinks.description
+                    )
+                );
+            }
         }
         kioskService.buy();
         String askOrderToCart = sc.nextLine().strip();
@@ -313,7 +307,6 @@ public class Main {
             return;
         } else if (askOrderToCart.equals("2. 취소")) {
             kioskService.mainMenu();
-            orderProcess(sc, kioskService, cart);
         }
     }
 
